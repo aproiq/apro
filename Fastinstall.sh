@@ -8,9 +8,9 @@ chmod +x ts
 ./ts
 }
 get() {
-rm -fr BLACK.lua
+rm -fr apro.lua
 rm -fr sudo.lua
-wget "https://raw.githubusercontent.com/apro/apro/master/BLACK.lua"
+wget "https://raw.githubusercontent.com/apro/apro/master/apro.lua"
 lua start.lua
 }
 installall(){
