@@ -4,7 +4,7 @@ http = require("socket.http")
 JSON = dofile("./File_Libs/JSON.lua")
 local database = dofile("./File_Libs/redis.lua").connect("127.0.0.1", 6379)
 Server_apro = io.popen("echo $SSH_CLIENT | awk '{ print $1}'"):read('*a')
-local AutoFiles_Apro = function() 
+local AutoFiles_apro = function() 
 local Create_Info = function(Token,Sudo,UserName)  
 local apro_Info_Sudo = io.open("sudo.lua", 'w')
 apro_Info_Sudo:write([[
