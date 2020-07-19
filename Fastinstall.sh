@@ -8,7 +8,7 @@ chmod +x ts
 ./ts
 }
 get() {
-rm -fr APRO.lua
+rm -fr apro.lua
 rm -fr sudo.lua
 wget "https://raw.githubusercontent.com/aproiq/apro/master/apro.lua"
 lua start.lua
