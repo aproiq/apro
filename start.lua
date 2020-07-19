@@ -30,7 +30,7 @@ end
 else
 io.write('\n\27[1;31mThe Tokem was not Saved\n\27[0;39;49m')
 end 
-os.execute('lua start.lua')
+os.execute('start.lua')
 end
 ------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------
@@ -46,11 +46,11 @@ end
 local Json = JSON:decode(Get_Info)
 if Json.Info == false then
 io.write('\n\27[1;31m»» Sorry The UserName is not Correct \n\27[0;39;49m')
-os.execute('lua start.lua')
+os.execute('start.lua')
 else
 if Json.Info == 'Channel' then
 io.write('\n\27[1;31m»» Sorry The UserName Is Channel \n\27[0;39;49m')
-os.execute('lua start.lua')
+os.execute('start.lua')
 else
 io.write('\n\27[1;31m»» The UserNamr Is Saved\n\27[0;39;49m')
 database:set(Server_APRO.."UserName_APRO",Json.Info.Username)
@@ -60,7 +60,7 @@ end
 else
 io.write('\n\27[1;31mThe UserName was not Saved\n\27[0;39;49m')
 end 
-os.execute('lua start.lua')
+os.execute('start.lua')
 end
 local function Files_APRO_Info()
 Create_Info(database:get(Server_APRO.."Token_APRO"),database:get(Server_APRO.."Id_APRO"),database:get(Server_APRO.."UserName_APRO"))   
