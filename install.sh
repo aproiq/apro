@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
-cd $HOME/APRO
+cd $HOME/apro
 install() {
 rm -rf $HOME/.telegram-cli
 sudo chmod +x tg
-chmod +x APRO
+chmod +x apro
 chmod +x ts
 ./ts
 }
 get() {
-rm -fr APRO.lua
+rm -fr apro.lua
 rm -fr sudo.lua
-wget "https://raw.githubusercontent.com/APROiq/APRO/master/APRO.lua"
+wget "https://raw.githubusercontent.com/aproiq/apro/master/apro.lua"
 lua start.lua
 }
 installall(){
@@ -47,7 +47,7 @@ fi
 installall
 cd ..
 rm -rf luarocks*
-cd APRO
+cd apro
 rm -rf luarocks*
 lua start.lua
 
